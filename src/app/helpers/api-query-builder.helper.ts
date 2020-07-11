@@ -5,9 +5,9 @@ export class ApiQueryBuilder {
   protected query: string;
 
   constructor(
-    private id: string,
-    private part: string[],
-    private fields: Array<ApiField>
+    private id?: string,
+    private part?: string[],
+    private fields?: Array<ApiField>
   ) {
     this.buildQuery();
   }
@@ -20,7 +20,7 @@ export class ApiQueryBuilder {
       this.buildFields()
     ];
 
-    this.query = `?${params.join('&')}`;
+    this.query = `?${params.filter(param => param).join('&')}`;
   }
 
   private buildKey(): string {
@@ -28,7 +28,7 @@ export class ApiQueryBuilder {
   }
 
   private buildId(): string {
-    return `id=${this.id}`;
+    return this.id ? `id=${this.id}` : null;
   }
 
   private mapFields(fields: Array<ApiField | string>): string {
@@ -43,10 +43,10 @@ export class ApiQueryBuilder {
   }
 
   private buildFields() {
-    return `fields=${this.mapFields(this.fields)}`;
+    return this.fields ? `fields=${this.mapFields(this.fields)}` : null;
   }
 
   private buildPart(): string {
-    return `part=${this.part.join(',')}`;
+    return this.part ? `part=${this.part.join(',')}` : null;
   }
 }
