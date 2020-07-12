@@ -7,9 +7,12 @@ import { VideoTabComponent } from './components/video-tab/video-tab.component';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VideolistComponent } from './pages/videolist/videolist.component';
+import { SearchComponent } from './components/search/search.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidedrawerComponent } from './components/sidedrawer/sidedrawer.component';
 
 @NgModule({
-  declarations: [AppComponent, VideoTabComponent, VideoModalComponent, HomeComponent, VideolistComponent],
+  declarations: [AppComponent, VideoTabComponent, VideoModalComponent, HomeComponent, VideolistComponent, SearchComponent, NavbarComponent, SidedrawerComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
