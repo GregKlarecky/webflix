@@ -1,0 +1,12 @@
+@import "~src/assets/styles/variables";
+
+.container {
+  margin: 1rem;
+}
+
+@media screen and (min-width: $screen-m) {
+  .container {
+    width: $screen-m;
+    margin: 1rem auto;
+  }
+}

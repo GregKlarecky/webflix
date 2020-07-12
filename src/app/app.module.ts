@@ -11,10 +11,30 @@ import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidedrawerComponent } from './components/sidedrawer/sidedrawer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [AppComponent, VideoTabComponent, VideoModalComponent, HomeComponent, VideolistComponent, SearchComponent, NavbarComponent, SidedrawerComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  declarations: [
+    AppComponent,
+    VideoTabComponent,
+    VideoModalComponent,
+    HomeComponent,
+    VideolistComponent,
+    SearchComponent,
+    NavbarComponent,
+    SidedrawerComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FontAwesomeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
