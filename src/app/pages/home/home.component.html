@@ -2,6 +2,8 @@
   <mat-label>Find a video</mat-label>
   <input
     matInput
-    placeholder="Example https://www.youtube.com/watch?v=1gq-u0W8aJc"
+    [(ngModel)]="searchValue"
+    (keydown.enter)="onEnter()"
+    [disabled]="disabled"
   />
 </mat-form-field>
