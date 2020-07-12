@@ -5,7 +5,8 @@ import { VideolistComponent } from './pages/videolist/videolist.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'list', component: VideolistComponent }
+  { path: 'list', component: VideolistComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

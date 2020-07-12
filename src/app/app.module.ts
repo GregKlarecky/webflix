@@ -10,10 +10,11 @@ import { VideolistComponent } from './pages/videolist/videolist.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidedrawerComponent } from './components/sidedrawer/sidedrawer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent, VideoTabComponent, VideoModalComponent, HomeComponent, VideolistComponent, SearchComponent, NavbarComponent, SidedrawerComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })

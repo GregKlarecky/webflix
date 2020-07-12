@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~src/assets/styles/variables";
+
+body {
+  background: $background;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.logo-icon {
+  font-size: 32px;
+  color: $red;
+}
+
+.icon-large {
+  font-size: 32px;
+}
+
+.icon-mid {
+  font-size: 20px;
+}

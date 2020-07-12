@@ -1,0 +1,24 @@
+@import "~src/assets/styles/variables";
+@import "~src/assets/styles/mixins";
+
+.navbar {
+  @include flex-start();
+  padding: 0.5rem 1rem;
+  background: $navbar-bckg;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.icon-right {
+  margin-left: auto;
+}
+
+.padding {
+  height: 55px;
+}
