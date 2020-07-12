@@ -2,12 +2,12 @@ import { environment } from '../../environments/environment';
 import { ApiField } from '../interfaces/api-fields.interface';
 
 export class ApiQueryBuilder {
-  protected query: string;
+  public query: string;
 
   constructor(
     private id?: string,
     private part?: string[],
-    private fields?: Array<ApiField>
+    private fields?: Array<ApiField | string>
   ) {
     this.buildQuery();
   }
@@ -43,7 +43,7 @@ export class ApiQueryBuilder {
   }
 
   private buildFields() {
-    return this.fields ? `fields=${this.mapFields(this.fields)}` : null;
+    return this.fields ? `fields=items(${this.mapFields(this.fields)})` : null;
   }
 
   private buildPart(): string {
