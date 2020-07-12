@@ -21,6 +21,8 @@ interface VideoSnippet {
     default: Thumbnail;
     medium: Thumbnail;
     high: Thumbnail;
+    standard: Thumbnail;
+    maxres: Thumbnail;
   };
 }
 

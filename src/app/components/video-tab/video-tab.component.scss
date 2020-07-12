@@ -1,0 +1,70 @@
+@import "~src/assets/styles/mixins";
+@import "~src/assets/styles/variables";
+
+.video-tab {
+  @include flex-column();
+  align-items: flex-start;
+  .img-wrap {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .img-hover {
+    @include flex-center();
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity ease-in 200ms;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    &:hover {
+      opacity: 1;
+    }
+    .play {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 32px;
+    }
+  }
+  .details {
+    @include flex-column();
+    overflow: hidden;
+    width: 100%;
+  }
+  .title {
+    font-size: $font-large;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .actions {
+    @include flex-start();
+    margin-top: auto;
+  }
+  .icon {
+    cursor: pointer;
+    padding: 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: $screen-s) {
+  .video-tab {
+    @include flex-start();
+    align-items: stretch;
+    flex-direction: row;
+    .img-wrap {
+      width: auto;
+      margin-bottom: 0;
+    }
+    .details {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -7,3 +7,5 @@
     [disabled]="disabled"
   />
 </mat-form-field>
+
+<app-video-tab [video]="result | async" *ngIf="result | async"></app-video-tab>

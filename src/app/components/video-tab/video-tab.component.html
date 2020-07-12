@@ -1,1 +1,22 @@
-<p>video-tab works!</p>
+<mat-card>
+  <div class="video-tab">
+    <div class="img-wrap">
+      <img [src]="video?.snippet.thumbnails.medium.url" alt="" />
+      <div class="img-hover">
+        <fa-icon [icon]="play" class="play"></fa-icon>
+      </div>
+    </div>
+    <div class="details">
+      <span class="title">{{ video?.snippet.title }}</span>
+      <span class="info"
+        >Views: {{ video?.statistics.viewCount }} | Likes:
+        {{ video?.statistics.likeCount }}</span
+      >
+      <div class="actions">
+        <fa-icon [icon]="plus" class="icon"></fa-icon>
+        <fa-icon [icon]="minus" class="icon"></fa-icon>
+        <fa-icon [icon]="heart" class="icon"></fa-icon>
+      </div>
+    </div>
+  </div>
+</mat-card>
