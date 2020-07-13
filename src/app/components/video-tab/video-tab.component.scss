@@ -26,11 +26,16 @@
     &:hover {
       opacity: 1;
     }
-    .play {
+    .hover-icon {
       color: rgba(255, 255, 255, 0.8);
       font-size: 32px;
     }
   }
+
+  .img-loading {
+    opacity: 1;
+  }
+
   .details {
     @include flex-column();
     overflow: hidden;

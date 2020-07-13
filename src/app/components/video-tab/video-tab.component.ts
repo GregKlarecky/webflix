@@ -4,7 +4,8 @@ import {
   faPlus,
   faMinus,
   faHeart,
-  faPlay
+  faPlay,
+  faCircleNotch
 } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-video-tab',
@@ -17,4 +18,10 @@ export class VideoTabComponent {
   public play = faPlay;
   public minus = faMinus;
   public heart = faHeart;
+  public spinner = faCircleNotch;
+  public loading: boolean;
+
+  playVideo() {
+    this.loading = true;
+  }
 }
