@@ -22,19 +22,34 @@ export class ListService {
   private saveList(items: Video[]): void {
     const list = JSON.stringify(items);
     localStorage.setItem('videoList', list);
-    this.listStore.next(this.list);
   }
 
   public addVideo(video: Video): void {
     const found = this.list.find(item => item.id === video.id);
     if (!found) {
-      this.list = [...this.list, video];
+      const stamped = { ...video, timestamp: this.stamp() };
+      this.list = [...this.list, stamped];
       this.saveList(this.list);
+      this.listStore.next(this.list);
     }
   }
 
   public removeVideo(video: Video): void {
     this.list = this.list.filter(item => item.id !== video.id);
     this.saveList(this.list);
+    this.listStore.next(this.list);
+  }
+
+  public markFavourite(video: Video): void {
+    const favourite = { ...video, favourite: true };
+    this.list = this.list.map(item =>
+      item.id === video.id ? favourite : item
+    );
+    this.saveList(this.list);
+    this.listStore.next(this.list);
+  }
+
+  public stamp(): number {
+    return new Date().getTime();
   }
 }

@@ -1,7 +1,14 @@
-<h1>Your videos</h1>
+<div class="list-nav">
+  <h1>Your videos</h1>
+  <button mat-button color="primary">Get demo</button>
+  <button mat-button color="primary">Delete all</button>
+  <button mat-button color="warn">Favourite</button>
+  <button mat-button color="warn">Freshest</button>
+  <button mat-button color="warn">Oldest</button>
+</div>
 
 <ul>
-  <li *ngFor="let video of list.listStore | async">
+  <li *ngFor="let video of list.listStore | async; trackBy: trackByFn">
     <app-video-tab [video]="video"></app-video-tab>
   </li>
 </ul>

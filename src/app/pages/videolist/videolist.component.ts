@@ -10,4 +10,8 @@ export class VideolistComponent implements OnInit {
   constructor(public list: ListService) {}
 
   ngOnInit(): void {}
+
+  trackByFn(index) {
+    return index;
+  }
 }

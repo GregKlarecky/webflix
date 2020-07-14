@@ -8,7 +8,7 @@ export interface VideoResponse {
   items: Video[];
 }
 
-interface Statistics {
+export interface Statistics {
   viewCount: string;
   likeCount: string;
   dislikeCount: string;
@@ -16,7 +16,7 @@ interface Statistics {
   commentCount: string;
 }
 
-interface VideoSnippet {
+export interface VideoSnippet {
   title: string;
   thumbnails: {
     default: Thumbnail;

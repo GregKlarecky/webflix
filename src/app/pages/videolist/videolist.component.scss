@@ -1,3 +1,5 @@
+@import "~src/assets/styles/mixins";
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -6,4 +8,12 @@ ul {
 
 li {
   margin-bottom: 1rem;
+}
+
+h1 {
+  margin-right: auto;
+}
+.list-nav {
+  @include flex-start();
+  align-items: baseline;
 }

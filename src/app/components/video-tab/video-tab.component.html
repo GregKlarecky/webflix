@@ -23,7 +23,11 @@
           class="icon"
           (click)="list.removeVideo(video)"
         ></fa-icon>
-        <fa-icon [icon]="heart" class="icon"></fa-icon>
+        <fa-icon
+          [icon]="heart"
+          class="icon"
+          (click)="list.markFavourite(video)"
+        ></fa-icon>
       </div>
     </div>
   </div>
