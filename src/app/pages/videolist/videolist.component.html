@@ -36,3 +36,16 @@
     <app-video-tab [video]="video"></app-video-tab>
   </li>
 </ul>
+
+<ul class="pagination">
+  <li>
+    Pages
+  </li>
+  <li *ngFor="let page of list.listStore | async; let index = index">
+    <a [routerLink]="['/list', index]">
+      <button mat-button color="primary">
+        {{ index + 1 }}
+      </button>
+    </a>
+  </li>
+</ul>

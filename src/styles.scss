@@ -32,6 +32,12 @@ body {
   animation: load 1s infinite ease;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 @-webkit-keyframes load {
   0% {
     -webkit-transform: rotate(0deg);

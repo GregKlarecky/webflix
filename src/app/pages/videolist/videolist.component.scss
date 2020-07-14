@@ -18,3 +18,7 @@ h1 {
   align-items: baseline;
   margin-bottom: 2rem;
 }
+
+.pagination {
+  @include flex-center();
+}
