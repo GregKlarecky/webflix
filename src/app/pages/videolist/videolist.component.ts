@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService } from '../../services/list.service';
 
 @Component({
   selector: 'app-videolist',
@@ -6,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./videolist.component.scss']
 })
 export class VideolistComponent implements OnInit {
+  constructor(public list: ListService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -9,7 +9,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { VideolistComponent } from './pages/videolist/videolist.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidedrawerComponent } from './components/sidedrawer/sidedrawer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +29,6 @@ import { MatButtonModule } from '@angular/material/button';
     VideolistComponent,
     SearchComponent,
     NavbarComponent,
-    SidedrawerComponent,
     PlayerComponent,
     SafeHtmlPipe
   ],

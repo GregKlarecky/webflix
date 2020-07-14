@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PlayerComponent } from '../player/player.component';
+import { ListService } from '../../services/list.service';
 
 MatDialogConfig;
 @Component({
@@ -24,7 +25,7 @@ export class VideoTabComponent {
   public heart = faHeart;
   public spinner = faCircleNotch;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, public list: ListService) {}
 
   playVideo() {
     this.dialog.open(PlayerComponent, { data: this.video });

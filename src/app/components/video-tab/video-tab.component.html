@@ -13,8 +13,16 @@
         {{ video?.statistics.likeCount }}</span
       >
       <div class="actions">
-        <fa-icon [icon]="plus" class="icon"></fa-icon>
-        <fa-icon [icon]="minus" class="icon"></fa-icon>
+        <fa-icon
+          [icon]="plus"
+          class="icon"
+          (click)="list.addVideo(video)"
+        ></fa-icon>
+        <fa-icon
+          [icon]="minus"
+          class="icon"
+          (click)="list.removeVideo(video)"
+        ></fa-icon>
         <fa-icon [icon]="heart" class="icon"></fa-icon>
       </div>
     </div>

@@ -1,1 +1,7 @@
-<p>videolist works!</p>
+<h1>Your videos</h1>
+
+<ul>
+  <li *ngFor="let video of list.listStore | async">
+    <app-video-tab [video]="video"></app-video-tab>
+  </li>
+</ul>
