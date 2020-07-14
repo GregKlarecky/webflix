@@ -1,5 +1,7 @@
 export interface Video {
   id: string;
+  favourite?: boolean;
+  timestamp?: number;
   snippet: VideoSnippet;
   statistics: Statistics;
 }

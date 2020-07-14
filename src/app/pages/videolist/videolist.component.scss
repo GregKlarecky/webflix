@@ -16,4 +16,5 @@ h1 {
 .list-nav {
   @include flex-start();
   align-items: baseline;
+  margin-bottom: 2rem;
 }

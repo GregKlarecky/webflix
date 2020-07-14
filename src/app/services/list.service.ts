@@ -7,16 +7,15 @@ import { ReplaySubject } from 'rxjs';
 })
 export class ListService {
   private list: Video[];
-  public listStore: ReplaySubject<Video[]> = new ReplaySubject(1);
+  public listStore: ReplaySubject<Video[][]> = new ReplaySubject(1);
   constructor() {
-    const listInit = this.getList();
-    this.listStore.next(listInit);
+    this.getList();
   }
 
-  private getList(): Video[] {
+  public getList(): void {
     const list = localStorage.getItem('videoList');
     this.list = JSON.parse(list) || [];
-    return [...this.list];
+    this.paginateAndShare(this.list);
   }
 
   private saveList(items: Video[]): void {
@@ -30,14 +29,14 @@ export class ListService {
       const stamped = { ...video, timestamp: this.stamp() };
       this.list = [...this.list, stamped];
       this.saveList(this.list);
-      this.listStore.next(this.list);
+      this.paginateAndShare(this.list);
     }
   }
 
   public removeVideo(video: Video): void {
     this.list = this.list.filter(item => item.id !== video.id);
     this.saveList(this.list);
-    this.listStore.next(this.list);
+    this.paginateAndShare(this.list);
   }
 
   public markFavourite(video: Video): void {
@@ -46,10 +45,44 @@ export class ListService {
       item.id === video.id ? favourite : item
     );
     this.saveList(this.list);
-    this.listStore.next(this.list);
+    this.paginateAndShare(this.list);
+  }
+
+  public filterFav() {
+    const favs = this.list.filter(item => item.favourite);
+    this.paginateAndShare(favs);
+  }
+
+  public sortFresh() {
+    const fresh = this.list.sort((a, b) => b.timestamp - a.timestamp);
+    this.paginateAndShare(fresh);
+  }
+
+  public sortOld() {
+    const old = this.list.sort((a, b) => a.timestamp - b.timestamp);
+    this.paginateAndShare(old);
   }
 
   public stamp(): number {
     return new Date().getTime();
+  }
+
+  public deleteAll(): void {
+    localStorage.removeItem('videoList');
+    this.getList();
+  }
+
+  public paginate(list): Video[][] {
+    const copy = [...list];
+    const pagination = [];
+    while (copy.length > 0) {
+      pagination.push(copy.splice(0, 3));
+    }
+    return pagination;
+  }
+
+  public paginateAndShare(list: Video[]) {
+    const paginated = this.paginate(list);
+    this.listStore.next(paginated);
   }
 }

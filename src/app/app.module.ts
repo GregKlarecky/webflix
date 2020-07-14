@@ -19,6 +19,8 @@ import { PlayerComponent } from './components/player/player.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { PagePipe } from './pipes/page.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     SearchComponent,
     NavbarComponent,
     PlayerComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    PagePipe
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatDialogModule,
     MatButtonModule,
+    MatSelectModule,
     FontAwesomeModule
   ],
   providers: [],

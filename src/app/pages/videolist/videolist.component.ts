@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../../services/list.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-videolist',
@@ -7,9 +8,14 @@ import { ListService } from '../../services/list.service';
   styleUrls: ['./videolist.component.scss']
 })
 export class VideolistComponent implements OnInit {
-  constructor(public list: ListService) {}
+  public page: number;
+  constructor(public route: ActivatedRoute, public list: ListService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(paramMap => {
+      this.page = +paramMap.get('page');
+    });
+  }
 
   trackByFn(index) {
     return index;

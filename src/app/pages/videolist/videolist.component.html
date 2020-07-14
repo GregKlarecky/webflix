@@ -1,14 +1,38 @@
 <div class="list-nav">
   <h1>Your videos</h1>
-  <button mat-button color="primary">Get demo</button>
-  <button mat-button color="primary">Delete all</button>
-  <button mat-button color="warn">Favourite</button>
-  <button mat-button color="warn">Freshest</button>
-  <button mat-button color="warn">Oldest</button>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Actions</mat-label>
+    <mat-select>
+      <mat-option> Get demo </mat-option>
+      <mat-option (click)="list.deleteAll()"> Delete all </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filters</mat-label>
+    <mat-select>
+      <mat-option (click)="list.getList()"> None </mat-option>
+      <mat-option value="Favourite" (click)="list.filterFav()">
+        Favourite
+      </mat-option>
+      <mat-option value="Freshest" (click)="list.sortFresh()">
+        Freshest
+      </mat-option>
+      <mat-option value="Freshest" (click)="list.sortOld()">
+        Oldest
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <ul>
-  <li *ngFor="let video of list.listStore | async; trackBy: trackByFn">
+  <li
+    *ngFor="
+      let video of list.listStore | async | pageNumber: page;
+      trackBy: trackByFn
+    "
+  >
     <app-video-tab [video]="video"></app-video-tab>
   </li>
 </ul>
