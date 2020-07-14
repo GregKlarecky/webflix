@@ -2,13 +2,17 @@
 @import "~src/assets/styles/mixins";
 
 .navbar {
-  @include flex-start();
-  align-items: center;
   padding: 0.5rem 1rem;
   background: $navbar-bckg;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: $navbar-z;
+}
+
+.wrap {
+  @include flex-start();
+  align-items: center;
 }
 
 .logo {
@@ -16,10 +20,17 @@
   margin-left: 1rem;
 }
 
-.icon-right {
+.navigation {
   margin-left: auto;
 }
 
 .padding {
   height: 55px;
+}
+
+@media screen and (min-width: $screen-m) {
+  .wrap {
+    width: $screen-m;
+    margin: 0 auto;
+  }
 }

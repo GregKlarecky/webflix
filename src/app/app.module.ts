@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { PlayerComponent } from './components/player/player.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     MatInputModule,
     MatCardModule,
     MatDialogModule,
+    MatButtonModule,
     FontAwesomeModule
   ],
   providers: [],
