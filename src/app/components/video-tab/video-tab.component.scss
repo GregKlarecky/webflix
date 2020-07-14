@@ -32,10 +32,6 @@
     }
   }
 
-  .img-loading {
-    opacity: 1;
-  }
-
   .details {
     @include flex-column();
     overflow: hidden;

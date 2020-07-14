@@ -7,6 +7,10 @@ import {
   faPlay,
   faCircleNotch
 } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PlayerComponent } from '../player/player.component';
+
+MatDialogConfig;
 @Component({
   selector: 'app-video-tab',
   templateUrl: './video-tab.component.html',
@@ -19,9 +23,10 @@ export class VideoTabComponent {
   public minus = faMinus;
   public heart = faHeart;
   public spinner = faCircleNotch;
-  public loading: boolean;
+
+  constructor(private dialog: MatDialog) {}
 
   playVideo() {
-    this.loading = true;
+    this.dialog.open(PlayerComponent, { data: this.video });
   }
 }

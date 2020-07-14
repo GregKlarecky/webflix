@@ -15,7 +15,12 @@ export class ApiService {
     const queryBuilder = new ApiQueryBuilder(
       code,
       ['snippet', 'statistics'],
-      ['statistics', { name: 'snippet', items: ['title', 'thumbnails'] }]
+      [
+        ,
+        'id',
+        'statistics',
+        { name: 'snippet', items: ['title', 'thumbnails'] }
+      ]
     );
     return this.http.get<VideoResponse>(
       environment.youtubeDomain + 'videos' + queryBuilder.query

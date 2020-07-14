@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { PlayerComponent } from './components/player/player.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { FormsModule } from '@angular/forms';
     VideolistComponent,
     SearchComponent,
     NavbarComponent,
-    SidedrawerComponent
+    SidedrawerComponent,
+    PlayerComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatDialogModule,
     FontAwesomeModule
   ],
   providers: [],

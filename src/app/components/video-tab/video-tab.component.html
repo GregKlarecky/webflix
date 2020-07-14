@@ -2,13 +2,8 @@
   <div class="video-tab">
     <div class="img-wrap" (click)="playVideo()">
       <img [src]="video?.snippet.thumbnails.medium.url" alt="" />
-      <div class="img-hover" [class.img-loading]="loading">
-        <fa-icon [icon]="play" class="hover-icon" *ngIf="!loading"></fa-icon>
-        <fa-icon
-          [icon]="spinner"
-          class="hover-icon spinner"
-          *ngIf="loading"
-        ></fa-icon>
+      <div class="img-hover">
+        <fa-icon [icon]="play" class="hover-icon"></fa-icon>
       </div>
     </div>
     <div class="details">
