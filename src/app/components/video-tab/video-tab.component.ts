@@ -20,7 +20,7 @@ MatDialogConfig;
 export class VideoTabComponent {
   @Input() video: Video;
   @Input() tileView: boolean;
-  @Output() adding: EventEmitter<never> = new EventEmitter();
+  @Output() adding: EventEmitter<void> = new EventEmitter();
   public plus = faPlus;
   public play = faPlay;
   public minus = faMinus;

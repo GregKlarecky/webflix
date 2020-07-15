@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,6 +6,6 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   public play = faPlayCircle;
 }
