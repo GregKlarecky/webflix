@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Video } from '../../interfaces/video.interface';
 import {
   faPlus,
@@ -20,6 +20,7 @@ MatDialogConfig;
 export class VideoTabComponent {
   @Input() video: Video;
   @Input() tileView: boolean;
+  @Output() adding: EventEmitter<never> = new EventEmitter();
   public plus = faPlus;
   public play = faPlay;
   public minus = faMinus;

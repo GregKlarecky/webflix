@@ -1,6 +1,10 @@
 @import "~src/assets/styles/mixins";
 @import "~src/assets/styles/variables";
 
+:host {
+  display: block;
+}
+
 .video-tab {
   @include flex-column();
   align-items: flex-start;
