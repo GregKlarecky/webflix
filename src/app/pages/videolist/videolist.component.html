@@ -26,13 +26,17 @@
   </mat-form-field>
 </div>
 
-<div class="view-options">
+<div class="view-options" *ngIf="(list.listStore | async)?.length">
   <span>Choose view: </span>
   <app-tiles (click)="setView(true)"></app-tiles>
   <fa-icon [icon]="bars" (click)="setView(false)"></fa-icon>
 </div>
 
-<ul class="video-list" [class.list-tiles]="tileView">
+<ul
+  class="video-list"
+  [class.list-tiles]="tileView"
+  *ngIf="(list.listStore | async)?.length"
+>
   <li
     *ngFor="
       let video of list.listStore | async | pageNumber: page;
@@ -43,7 +47,7 @@
   </li>
 </ul>
 
-<ul class="pagination">
+<ul class="pagination" *ngIf="(list.listStore | async)?.length">
   <li>
     Pages
   </li>
@@ -55,3 +59,7 @@
     </a>
   </li>
 </ul>
+
+<span *ngIf="!(list.listStore | async)?.length">
+  There are no movies in your library
+</span>
