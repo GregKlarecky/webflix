@@ -21,6 +21,7 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { PagePipe } from './pipes/page.pipe';
+import { TilesComponent } from './components/tiles/tiles.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PagePipe } from './pipes/page.pipe';
     NavbarComponent,
     PlayerComponent,
     SafeHtmlPipe,
-    PagePipe
+    PagePipe,
+    TilesComponent
   ],
   imports: [
     BrowserModule,

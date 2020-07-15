@@ -6,6 +6,24 @@ ul {
   margin: 0;
 }
 
+.video-list {
+  height: 700px;
+}
+
+.view-options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  span {
+    margin-right: 0.5rem;
+  }
+  app-tiles,
+  fa-icon {
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 1rem;
+  }
+}
 li {
   margin-bottom: 1rem;
 }

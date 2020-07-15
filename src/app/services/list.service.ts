@@ -7,6 +7,7 @@ import { ReplaySubject } from 'rxjs';
 })
 export class ListService {
   private list: Video[];
+  private pageSize: number = 4;
   public listStore: ReplaySubject<Video[][]> = new ReplaySubject(1);
   constructor() {
     this.getList();
@@ -63,7 +64,7 @@ export class ListService {
     this.paginateAndShare(old);
   }
 
-  public stamp(): number {
+  private stamp(): number {
     return new Date().getTime();
   }
 
@@ -72,16 +73,16 @@ export class ListService {
     this.getList();
   }
 
-  public paginate(list): Video[][] {
+  private paginate(list): Video[][] {
     const copy = [...list];
     const pagination = [];
     while (copy.length > 0) {
-      pagination.push(copy.splice(0, 3));
+      pagination.push(copy.splice(0, this.pageSize));
     }
     return pagination;
   }
 
-  public paginateAndShare(list: Video[]) {
+  private paginateAndShare(list: Video[]) {
     const paginated = this.paginate(list);
     this.listStore.next(paginated);
   }

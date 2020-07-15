@@ -10,7 +10,8 @@
       <span class="title">{{ video?.snippet.title }}</span>
       <span class="info"
         >Views: {{ video?.statistics.viewCount }} | Likes:
-        {{ video?.statistics.likeCount }}</span
+        {{ video?.statistics.likeCount }} | Date:
+        {{ video?.timestamp | date: "M/d/yy" }}</span
       >
       <div class="actions">
         <fa-icon
