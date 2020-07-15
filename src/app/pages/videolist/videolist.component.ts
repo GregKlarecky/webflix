@@ -11,6 +11,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class VideolistComponent implements OnInit {
   public page: number;
   public bars = faBars;
+  public tileView: boolean = false;
   constructor(public route: ActivatedRoute, public list: ListService) {}
 
   ngOnInit(): void {
@@ -21,5 +22,9 @@ export class VideolistComponent implements OnInit {
 
   trackByFn(index) {
     return index;
+  }
+
+  public setView(tile: boolean) {
+    this.tileView = tile;
   }
 }

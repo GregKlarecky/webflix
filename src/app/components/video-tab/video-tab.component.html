@@ -1,5 +1,5 @@
 <mat-card>
-  <div class="video-tab">
+  <div class="video-tab" [class.tile]="tileView">
     <div class="img-wrap" (click)="playVideo()">
       <img [src]="video?.snippet.thumbnails.medium.url" alt="" />
       <div class="img-hover">

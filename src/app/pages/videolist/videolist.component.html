@@ -28,17 +28,18 @@
 
 <div class="view-options">
   <span>Choose view: </span>
-  <app-tiles></app-tiles> <fa-icon [icon]="bars"></fa-icon>
+  <app-tiles (click)="setView(true)"></app-tiles>
+  <fa-icon [icon]="bars" (click)="setView(false)"></fa-icon>
 </div>
 
-<ul class="video-list">
+<ul class="video-list" [class.list-tiles]="tileView">
   <li
     *ngFor="
       let video of list.listStore | async | pageNumber: page;
       trackBy: trackByFn
     "
   >
-    <app-video-tab [video]="video"></app-video-tab>
+    <app-video-tab [video]="video" [tileView]="tileView"></app-video-tab>
   </li>
 </ul>
 

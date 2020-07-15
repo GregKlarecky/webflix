@@ -53,6 +53,19 @@
     cursor: pointer;
     padding: 0 0.5rem;
   }
+
+  &.tile {
+    @include flex-column();
+    width: 100%;
+    align-items: flex-start;
+    .img-wrap {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .details {
+      margin-left: 0;
+    }
+  }
 }
 
 @media screen and (min-width: $screen-s) {
@@ -66,6 +79,14 @@
     }
     .details {
       margin-left: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-m) {
+  .video-tab {
+    &.tile {
+      width: 340px;
     }
   }
 }

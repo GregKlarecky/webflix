@@ -19,6 +19,7 @@ MatDialogConfig;
 })
 export class VideoTabComponent {
   @Input() video: Video;
+  @Input() tileView: boolean;
   public plus = faPlus;
   public play = faPlay;
   public minus = faMinus;
